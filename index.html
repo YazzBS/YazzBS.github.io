@@ -21,25 +21,8 @@ padding:15px;
 font-weight:bold;
 }
 
-nav a{
-margin:15px;
-color:#081c4a;
-text-decoration:none;
-font-size:18px;
-}
-
-.logo{
-margin-top:30px;
-}
-
-.logo img{
-width:160px;
-border-radius:50%;
-border:5px solid #ffd000;
-}
-
 h1{
-font-size:50px;
+font-size:45px;
 color:#ffd000;
 }
 
@@ -47,27 +30,21 @@ color:#ffd000;
 display:inline-block;
 background:#ffd000;
 color:#081c4a;
-padding:15px 25px;
+padding:12px 20px;
 margin:10px;
 border-radius:10px;
 text-decoration:none;
 font-weight:bold;
-transition:0.2s;
-}
-
-.boton:hover{
-transform:scale(1.1);
-background:white;
 }
 
 .seccion{
-margin-top:60px;
+margin-top:50px;
 }
 
 .card{
 display:inline-block;
 background:#0e2a70;
-padding:20px;
+padding:15px;
 margin:10px;
 border-radius:10px;
 width:120px;
@@ -78,14 +55,14 @@ margin:auto;
 width:300px;
 height:200px;
 background:#0e2a70;
-border:4px solid #ffd000;
+border:3px solid #ffd000;
 position:relative;
 overflow:hidden;
 }
 
 .star{
 position:absolute;
-font-size:30px;
+font-size:25px;
 cursor:pointer;
 }
 
@@ -96,16 +73,15 @@ border:none;
 }
 
 button{
-padding:10px 20px;
+padding:10px;
+background:#ffd000;
 border:none;
 border-radius:5px;
-background:#ffd000;
-font-weight:bold;
 cursor:pointer;
 }
 
 footer{
-margin-top:50px;
+margin-top:40px;
 padding:20px;
 background:#020f2f;
 }
@@ -117,10 +93,8 @@ background:#020f2f;
 <body>
 
 <nav>
-Inicio | TikTok | Estadísticas | Juego | Canjear
+YazzBS 🎮
 </nav>
-
-<section class="logo">
 
 <h1>YazzBS</h1>
 <p>🎮 TikTok Gaming Creator</p>
@@ -129,66 +103,41 @@ Inicio | TikTok | Estadísticas | Juego | Canjear
 Ver mi TikTok
 </a>
 
-</section>
-
-<section class="seccion">
-
+<div class="seccion">
 <h2>📊 Estadísticas</h2>
 
-<div class="card">
-<h3>Videos</h3>
-<p>7</p>
+<div class="card">Videos<br>7</div>
+<div class="card">Likes<br>20+</div>
+<div class="card">Vistas<br>1000+</div>
+<div class="card">Seguidores<br>4</div>
+
 </div>
 
-<div class="card">
-<h3>Likes</h3>
-<p>20+</p>
-</div>
-
-<div class="card">
-<h3>Vistas</h3>
-<p>1000+</p>
-</div>
-
-<div class="card">
-<h3>Seguidores</h3>
-<p>4</p>
-</div>
-
-</section>
-
-<section class="seccion">
-
+<div class="seccion">
 <h2>⭐ Minijuego</h2>
 
 <div id="game"></div>
+<p>Puntos: <span id="score">0</span></p>
+</div>
 
-<p>Puntuación: <span id="score">0</span></p>
-
-</section>
-
-<section class="seccion">
-
+<div class="seccion">
 <h2>🔑 Canjear código</h2>
 
 <input id="codigo" placeholder="Escribe el código">
-
 <button onclick="canjear()">Canjear</button>
 
 <p id="resultado"></p>
-
-</section>
+</div>
 
 <footer>
-
-<p>
-¡SIGUEME EN TIKTOK COMO @yazzbs2!
+<p style="color:#ffd000; font-size:20px; font-weight:bold;">
+🔥 ¡SÍGUEME EN TIKTOK COMO @yazzbs2! 🔥
 </p>
-
 </footer>
 
 <script>
 
+// 🎮 MINIJUEGO
 let score=0;
 const game=document.getElementById("game");
 const scoreText=document.getElementById("score");
@@ -196,7 +145,6 @@ const scoreText=document.getElementById("score");
 function spawnStar(){
 
 const star=document.createElement("div");
-
 star.className="star";
 star.innerHTML="⭐";
 
@@ -221,24 +169,22 @@ star.remove();
 
 setInterval(spawnStar,1200);
 
+
+// 🔑 CÓDIGOS SECRETOS
 function canjear(){
 
-<script>
+let codigo=document.getElementById("codigo").value.toUpperCase();
+let resultado=document.getElementById("resultado");
 
-function canjear(){
-
-let codigo = document.getElementById("codigo").value.toUpperCase();
-let resultado = document.getElementById("resultado");
-
-if(codigo=="ELSECRETO"){
+if(codigo==="ELSECRETO"){
 window.location.href="verdadero-lore.html";
 }
 
-else if(codigo=="ESHORADEJUGAR"){
+else if(codigo==="ESHORADEJUGAR"){
 resultado.innerHTML="🎮 ¡Minijuego secreto desbloqueado!";
 }
 
-else if(codigo=="SALUDITOS"){
+else if(codigo==="SALUDITOS"){
 resultado.innerHTML="👋 ¡YazzBS podría enviarte un saludo!";
 }
 
@@ -249,3 +195,6 @@ resultado.innerHTML="❌ Código incorrecto";
 }
 
 </script>
+
+</body>
+</html>
