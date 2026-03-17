@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>YazzBS - Gaming Creator</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#081c4a;
+color:white;
+text-align:center;
+}
+
+/* MENÚ */
+nav{
+background:#ffd000;
+padding:15px;
+font-weight:bold;
+}
+
+nav a{
+margin:15px;
+color:#081c4a;
+text-decoration:none;
+font-size:18px;
+}
+
+/* LOGO */
+.logo{
+margin-top:30px;
+}
+
+.logo img{
+width:160px;
+border-radius:50%;
+border:5px solid #ffd000;
+}
+
+/* TITULO */
+h1{
+font-size:50px;
+color:#ffd000;
+}
+
+/* BOTONES */
+.boton{
+display:inline-block;
+background:#ffd000;
+color:#081c4a;
+padding:15px 25px;
+margin:10px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+transition:0.2s;
+}
+
+.boton:hover{
+transform:scale(1.1);
+background:white;
+}
+
+/* SECCIONES */
+.seccion{
+margin-top:60px;
+}
+
+/* TARJETAS ESTADISTICAS */
+.card{
+display:inline-block;
+background:#0e2a70;
+padding:20px;
+margin:10px;
+border-radius:10px;
+width:120px;
+}
+
+/* MINIJUEGO */
+#game{
+margin:auto;
+width:300px;
+height:200px;
+background:#0e2a70;
+border:4px solid #ffd000;
+position:relative;
+overflow:hidden;
+}
+
+.star{
+position:absolute;
+font-size:30px;
+cursor:pointer;
+}
+
+footer{
+margin-top:50px;
+padding:20px;
+background:#020f2f;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#tiktok">TikTok</a>
+<a href="#stats">Estadísticas</a>
+<a href="#juego">Juego</a>
+</nav>
+
+<section id="inicio" class="logo">
+<img src="icono.png">
+<h1>YazzBS</h1>
+<p>🎮 TikTok Gaming Creator</p>
+</section>
+
+<section id="tiktok" class="seccion">
+<h2>Mis Redes</h2>
+
+<a class="boton" href="https://www.tiktok.com/@yazzbs2" target="_blank">
+Ver mi TikTok
+</a>
+
+<a class="boton" onclick="alert('Pronto habrá más contenido!')">
+Mejores Clips
+</a>
+
+</section>
+
+<section id="stats" class="seccion">
+
+<h2>📊 Estadísticas</h2>
+
+<div class="card">
+<h3>Videos</h3>
+<p>7</p>
+</div>
+
+<div class="card">
+<h3>Likes</h3>
+<p>20+</p>
+</div>
+
+<div class="card">
+<h3>Vistas</h3>
+<p>1000+</p>
+</div>
+
+<div class="card">
+<h3>Seguidores</h3>
+<p>4</p>
+</div>
+
+</section>
+
+<section id="juego" class="seccion">
+
+<h2>⭐ Minijuego</h2>
+<p>Atrapa las estrellas</p>
+
+<div id="game"></div>
+
+<p>Puntuación: <span id="score">0</span></p>
+
+</section>
+
+<footer>
+
+<p>
+¡SIGUEME EN TIKTOK, ESTOY COMO @yazzbs2! 
+</p>
+
+<p>⭐ Web oficial de YazzBS</p>
+
+</footer>
+
+<script>
+let score=0;
+const game=document.getElementById("game");
+const scoreText=document.getElementById("score");
+
+function spawnStar(){
+
+const star=document.createElement("div");
+
+star.className="star";
+star.innerHTML="⭐";
+
+star.style.left=Math.random()*260+"px";
+star.style.top=Math.random()*160+"px";
+
+star.onclick=function(){
+score++;
+scoreText.textContent=score;
+star.remove();
+};
+
+game.appendChild(star);
+
+setTimeout(()=>{
+if(star.parentNode){
+star.remove();
+}
+},2000);
+
+}
+
+setInterval(spawnStar,1200);
+
+</script>
+
+</body>
+</html>
