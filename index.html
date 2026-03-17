@@ -214,3 +214,29 @@ setInterval(spawnStar,1200);
 
 </body>
 </html>
+<section>
+<h2>🔑 Canjear código</h2>
+
+<input id="codigo" placeholder="Escribe el código">
+
+<button onclick="canjear()">Canjear</button>
+
+<p id="resultado"></p>
+</section>
+
+<script>
+function canjear(){
+let codigo = document.getElementById("codigo").value;
+let resultado = document.getElementById("resultado");
+
+if(codigo == "FANTY"){
+resultado.innerHTML = "📖 Lore desbloqueado";
+}
+else{
+resultado.innerHTML = "❌ Código incorrecto";
+}
+}
+</script>
+
+</body>
+</html>
