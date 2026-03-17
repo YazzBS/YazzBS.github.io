@@ -215,28 +215,27 @@ setInterval(spawnStar,1200);
 </body>
 </html>
 <section>
-<h2>🔑 Canjear código</h2>
-
-<input id="codigo" placeholder="Escribe el código">
-
-<button onclick="canjear()">Canjear</button>
-
-<p id="resultado"></p>
-</section>
-
 <script>
 function canjear(){
-let codigo = document.getElementById("codigo").value;
+
+let codigo = document.getElementById("codigo").value.toUpperCase();
 let resultado = document.getElementById("resultado");
 
 if(codigo == "FANTY"){
-resultado.innerHTML = "📖 Lore desbloqueado";
+window.location.href="verdadero-lore.html";
 }
+
+else if(codigo == "YAZZPOWER"){
+resultado.innerHTML = "🎮 Minijuego secreto desbloqueado";
+}
+
+else if(codigo == "TIKTOK"){
+resultado.innerHTML = "👋 ¡Saludos de YazzBS!";
+}
+
 else{
 resultado.innerHTML = "❌ Código incorrecto";
 }
+
 }
 </script>
-
-</body>
-</html>
