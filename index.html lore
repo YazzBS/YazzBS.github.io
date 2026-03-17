@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Lore secreto</title>
+
+<style>
+
+body{
+background:#020f2f;
+color:white;
+font-family:Arial;
+text-align:center;
+padding:40px;
+}
+
+h1{
+color:#ffd000;
+font-size:40px;
+}
+
+p{
+font-size:20px;
+max-width:700px;
+margin:auto;
+line-height:1.6;
+}
+
+.boton{
+display:inline-block;
+margin-top:40px;
+padding:15px 25px;
+background:#ffd000;
+color:#020f2f;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>📜 El verdadero lore de Yazz y Fanty</h1>
+
+<p>
+Hace mucho tiempo, antes de que existiera el canal de YazzBS,
+un misterioso jugador llamado Yazz encontró algo extraño dentro del mundo
+del juego. No eran simples partidas... había secretos escondidos.
+</p>
+
+<p>
+Entre todos esos misterios apareció Fanty, un personaje que parecía
+saber más de lo que debería. Desde entonces, ambos comenzaron a descubrir
+fragmentos de un lore oculto que casi nadie conoce.
+</p>
+
+<p>
+Pero esto es solo el comienzo del secreto…
+</p>
+
+<a class="boton" href="index.html">Volver</a>
+
+</body>
+
+</html>
