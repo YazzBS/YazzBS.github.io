@@ -75,5 +75,4 @@ porque no todos los secretos deberían ser encontrados.
 
 </body>
 </html>
-
 window.location.href = "verdadero-lore.html";
