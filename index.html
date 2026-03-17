@@ -223,18 +223,22 @@ setInterval(spawnStar,1200);
 
 function canjear(){
 
-let codigo=document.getElementById("codigo").value.toUpperCase();
-let resultado=document.getElementById("resultado");
+<script>
 
-if(codigo=="FANTYCORE"){
+function canjear(){
+
+let codigo = document.getElementById("codigo").value.toUpperCase();
+let resultado = document.getElementById("resultado");
+
+if(codigo=="ELSECRETO"){
 window.location.href="verdadero-lore.html";
 }
 
-else if(codigo=="GEMSTORM"){
-resultado.innerHTML="🎮 Minijuego secreto desbloqueado";
+else if(codigo=="ESHORADEJUGAR"){
+resultado.innerHTML="🎮 ¡Minijuego secreto desbloqueado!";
 }
 
-else if(codigo=="STARCODE"){
+else if(codigo=="SALUDITOS"){
 resultado.innerHTML="👋 ¡YazzBS podría enviarte un saludo!";
 }
 
@@ -245,6 +249,3 @@ resultado.innerHTML="❌ Código incorrecto";
 }
 
 </script>
-
-</body>
-</html>
