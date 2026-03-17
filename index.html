@@ -173,4 +173,166 @@ resultado.innerHTML="❌ Código incorrecto";
 </script>
 
 </body>
-</html>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>YazzBS</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#081c4a;
+color:white;
+text-align:center;
+}
+
+nav{
+background:#ffd000;
+padding:15px;
+font-weight:bold;
+}
+
+h1{
+color:#ffd000;
+}
+
+.seccion{
+margin-top:40px;
+}
+
+.boton{
+display:inline-block;
+background:#ffd000;
+color:#081c4a;
+padding:10px 20px;
+margin:10px;
+border-radius:10px;
+text-decoration:none;
+}
+
+#game{
+width:300px;
+height:200px;
+margin:auto;
+background:#0e2a70;
+border:3px solid #ffd000;
+position:relative;
+overflow:hidden;
+}
+
+.star{
+position:absolute;
+font-size:25px;
+cursor:pointer;
+}
+
+input{
+padding:10px;
+border-radius:5px;
+border:none;
+}
+
+button{
+padding:10px;
+border:none;
+border-radius:5px;
+background:#ffd000;
+cursor:pointer;
+}
+
+footer{
+margin-top:40px;
+padding:20px;
+background:#020f2f;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+YazzBS 🎮
+</nav>
+
+<h1>YazzBS</h1>
+
+<a class="boton" href="https://www.tiktok.com/@yazzbs2" target="_blank">
+Ver mi TikTok
+</a>
+
+<div class="seccion">
+<h2>⭐ Atrapar estrellas</h2>
+
+<div id="game"></div>
+
+<p>Puntos: <span id="score">0</span></p>
+</div>
+
+<div class="seccion">
+<h2>🔑 Canjear</h2>
+
+<input id="codigo" placeholder="Escribe el código">
+<button onclick="canjear()">Canjear</button>
+
+<p id="resultado"></p>
+</div>
+
+<footer>
+<p style="color:#ffd000; font-size:18px;">
+🔥 ¡SÍGUEME EN TIKTOK COMO @yazzbs2! 🔥
+</p>
+</footer>
+
+<script>
+
+// MINIJUEGO
+let score=0;
+let game=document.getElementById("game");
+let scoreText=document.getElementById("score");
+
+function crearEstrella(){
+
+let star=document.createElement("div");
+star.className="star";
+star.innerHTML="⭐";
+
+star.style.left=Math.random()*260+"px";
+star.style.top=Math.random()*160+"px";
+
+star.onclick=function(){
+score++;
+scoreText.innerHTML=score;
+star.remove();
+};
+
+game.appendChild(star);
+
+setTimeout(()=>{
+if(star.parentNode){
+star.remove();
+}
+},2000);
+
+}
+
+setInterval(crearEstrella,1200);
+
+// CODIGOS
+function canjear(){
+
+let codigo=document.getElementById("codigo").value.toUpperCase();
+let resultado=document.getElementById("resultado");
+
+if(codigo==="ELSECRETO"){
+window.location.href="verdadero-lore.html";
+}
+
+else if(codigo==="ESHORADEJUGAR"){
+resultado.innerHTML="🎮 ¡Modo juego activado!";
+}
+
+else if(codigo==="SALUDITOS"){
+resultado.innerHTML="👋 ¡Podrías recibir un 
