@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
-<title>YazzBS - Gaming Creator</title>
+<title>YazzBS</title>
 
 <style>
+
 body{
 margin:0;
 font-family:Arial;
@@ -13,7 +15,6 @@ color:white;
 text-align:center;
 }
 
-/* MENÚ */
 nav{
 background:#ffd000;
 padding:15px;
@@ -27,7 +28,6 @@ text-decoration:none;
 font-size:18px;
 }
 
-/* LOGO */
 .logo{
 margin-top:30px;
 }
@@ -38,13 +38,11 @@ border-radius:50%;
 border:5px solid #ffd000;
 }
 
-/* TITULO */
 h1{
 font-size:50px;
 color:#ffd000;
 }
 
-/* BOTONES */
 .boton{
 display:inline-block;
 background:#ffd000;
@@ -62,12 +60,10 @@ transform:scale(1.1);
 background:white;
 }
 
-/* SECCIONES */
 .seccion{
 margin-top:60px;
 }
 
-/* TARJETAS ESTADISTICAS */
 .card{
 display:inline-block;
 background:#0e2a70;
@@ -77,7 +73,6 @@ border-radius:10px;
 width:120px;
 }
 
-/* MINIJUEGO */
 #game{
 margin:auto;
 width:300px;
@@ -94,43 +89,49 @@ font-size:30px;
 cursor:pointer;
 }
 
+input{
+padding:10px;
+border-radius:5px;
+border:none;
+}
+
+button{
+padding:10px 20px;
+border:none;
+border-radius:5px;
+background:#ffd000;
+font-weight:bold;
+cursor:pointer;
+}
+
 footer{
 margin-top:50px;
 padding:20px;
 background:#020f2f;
 }
+
 </style>
+
 </head>
 
 <body>
 
 <nav>
-<a href="#inicio">Inicio</a>
-<a href="#tiktok">TikTok</a>
-<a href="#stats">Estadísticas</a>
-<a href="#juego">Juego</a>
+Inicio | TikTok | Estadísticas | Juego | Canjear
 </nav>
 
-<section id="inicio" class="logo">
-<img src="icono.png">
+<section class="logo">
+
 <h1>YazzBS</h1>
 <p>🎮 TikTok Gaming Creator</p>
-</section>
-
-<section id="tiktok" class="seccion">
-<h2>Mis Redes</h2>
 
 <a class="boton" href="https://www.tiktok.com/@yazzbs2" target="_blank">
 Ver mi TikTok
 </a>
 
-<a class="boton" onclick="alert('Pronto habrá más contenido!')">
-Mejores Clips
-</a>
-
 </section>
 
-<section id="stats" class="seccion">
+<section class="seccion">
 
 <h2>📊 Estadísticas</h2>
 
@@ -156,10 +157,9 @@ Mejores Clips
 
 </section>
 
-<section id="juego" class="seccion">
+<section class="seccion">
 
 <h2>⭐ Minijuego</h2>
-<p>Atrapa las estrellas</p>
 
 <div id="game"></div>
 
@@ -167,17 +167,28 @@ Mejores Clips
 
 </section>
 
+<section class="seccion">
+
+<h2>🔑 Canjear código</h2>
+
+<input id="codigo" placeholder="Escribe el código">
+
+<button onclick="canjear()">Canjear</button>
+
+<p id="resultado"></p>
+
+</section>
+
 <footer>
 
 <p>
-¡SIGUEME EN TIKTOK, ESTOY COMO @yazzbs2! 
+¡SIGUEME EN TIKTOK COMO @yazzbs2!
 </p>
-
-<p>⭐ Web oficial de YazzBS</p>
 
 </footer>
 
 <script>
+
 let score=0;
 const game=document.getElementById("game");
 const scoreText=document.getElementById("score");
@@ -210,42 +221,30 @@ star.remove();
 
 setInterval(spawnStar,1200);
 
+function canjear(){
+
+let codigo=document.getElementById("codigo").value.toUpperCase();
+let resultado=document.getElementById("resultado");
+
+if(codigo=="FANTYCORE"){
+window.location.href="verdadero-lore.html";
+}
+
+else if(codigo=="GEMSTORM"){
+resultado.innerHTML="🎮 Minijuego secreto desbloqueado";
+}
+
+else if(codigo=="STARCODE"){
+resultado.innerHTML="👋 ¡YazzBS podría enviarte un saludo!";
+}
+
+else{
+resultado.innerHTML="❌ Código incorrecto";
+}
+
+}
+
 </script>
 
 </body>
 </html>
-<section>
-<script>
-<section>
-<h2>🔑 Canjear código</h2>
-
-<input id="codigo" placeholder="Escribe el código">
-
-<button onclick="canjear()">Canjear</button>
-
-<p id="resultado"></p>
-</section>
-  <script>
-function canjear(){
-
-let codigo = document.getElementById("codigo").value.toUpperCase();
-let resultado = document.getElementById("resultado");
-
-if(codigo == "FANTY"){
-window.location.href="verdadero-lore.html";
-}
-
-else if(codigo == "YAZZPOWER"){
-resultado.innerHTML = "🎮 Minijuego secreto desbloqueado";
-}
-
-else if(codigo == "TIKTOK"){
-resultado.innerHTML = "👋 ¡Saludos de YazzBS!";
-}
-
-else{
-resultado.innerHTML = "❌ Código incorrecto";
-}
-
-}
-</script>
